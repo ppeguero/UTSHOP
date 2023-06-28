@@ -1,6 +1,7 @@
 import UTSHOPLogo from '/src/assets/UTSHOP_logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
           <nav className='py-4 flex justify-end w-1/2 ml-6'>
             <ul className='flex items-center'>
               <li>
-                <a href="/" className=""><img src={UTSHOPLogo} className="w-24"></img></a>
+                <NavLink to="/" className=""><img src={UTSHOPLogo} className="w-24"></img></NavLink>
               </li>
             </ul>
           </nav>
