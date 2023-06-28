@@ -5,6 +5,9 @@ import Inicio from './routes/Inicio.jsx';
 import Catálogo from './routes/Catálogo.jsx';
 import Contáctanos from './routes/Contáctanos.jsx';
 import Carrito from './routes/Carrito.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const router = createBrowserRouter([
   {
