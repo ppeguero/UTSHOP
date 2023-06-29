@@ -2,12 +2,14 @@ import Header from "../components/header"
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
-
+import Footer from "../components/Footer";
 
 export default function Carrito(){
     return (
         <div>
+
             <Header />
+
             <nav className="w-90 h-16 flex items-center flex-shrink-0 border border-gray-400 bg-white shadow-lg">
                 <div className="w-1/2 flex justify-center">
                     <p className="text-black text-base font-inter font-light">PAGO SEGURO</p>
@@ -23,6 +25,8 @@ export default function Carrito(){
                     </NavLink>
                 </div>
             </nav>
+
+            <Footer />
         </div>
     )
 }
