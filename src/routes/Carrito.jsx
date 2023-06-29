@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 export default function Carrito(){
     return (
-        <div>
+        <div className="min-h-screen flex flex-col">
 
             <Header />
 
