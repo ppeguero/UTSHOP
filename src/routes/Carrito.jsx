@@ -1,7 +1,7 @@
 import Header from "../components/header"
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import Footer from "../components/Footer";
 
 export default function Carrito(){
@@ -10,7 +10,7 @@ export default function Carrito(){
 
             <Header />
 
-            <nav className="w-90 h-16 flex items-center flex-shrink-0 border border-gray-400 bg-white shadow-lg">
+            <nav className="w-90 h-16 flex items-center flex-shrink-0 border border-gray-400 bg-white shadow-inner">
                 <div className="w-1/2 flex justify-center">
                     <p className="text-black text-base font-inter font-light">PAGO SEGURO</p>
                 </div>
@@ -25,6 +25,28 @@ export default function Carrito(){
                     </NavLink>
                 </div>
             </nav>
+
+                <div className="bg-zinc-200 h-auto flex items-center justify-center p-20">
+                    <div className="bg-white h-96 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md">
+                        <div className="flex items-center flex-col ">
+                            <div className="mb-8">
+                                <FontAwesomeIcon icon={faCartShopping} style={{color: "#000000",}} className="fa-4x" />                        
+                            </div>
+                            <div>
+                                <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
+                            </div>          
+                            <div>
+                                <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catálogo">COMPRAR AHORA</NavLink></button>    
+                            </div>                  
+                        </div>
+                    </div>
+                </div>
+
+            <div className="bg-white h-auto flex p-12">
+                <div className="flex justify-start">
+                    <h3 className="font-bold text-black text-xl">LO MÁS VENDIDO</h3>
+                </div>
+            </div>
 
             <Footer />
         </div>
