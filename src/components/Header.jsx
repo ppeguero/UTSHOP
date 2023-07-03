@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
-      <header className="shadow-lg flex items-center">
-          <nav className='py-4 flex justify-end w-1/2 ml-6'>
+      <header className="shadow-lg list-none flex items-center justify-center">
+          <nav className='py-4 flex justify-end w-1/2 ml-24'>
             <ul className='flex items-center'>
               <li>
                 <NavLink to="/" className=""><img src={UTSHOPLogo} className="w-24"></img></NavLink>
