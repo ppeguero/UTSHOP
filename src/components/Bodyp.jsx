@@ -43,7 +43,7 @@ function Bodyp() {
         <div className="bg-fond via-slate-500 p-10 flex flex-col items-center gap-16">
         
           <div>
-           <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catálogo">COMPRAR AHORA</NavLink></button>    
+           <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catalogo">COMPRAR AHORA</NavLink></button>    
          </div>
         </div>
       </div><div className="container mx-auto mt-8">
