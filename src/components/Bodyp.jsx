@@ -1,12 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 
 import { faBorderAll, faImages } from '@fortawesome/free-solid-svg-icons';
-import 'tailwindcss/tailwind.css';
 import { NavLink } from 'react-router-dom';
-
-
-
-
 
 function Bodyp() {
   return (

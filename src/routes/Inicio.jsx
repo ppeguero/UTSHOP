@@ -4,18 +4,23 @@ import Bodyp from "../components/Bodyp";
 
 export default function Inicio(){
     return (
-        <div className="min-h-screen flex flex-col">
+        <div>
             <Header />
-            <h1>Inicio</h1>
-            <Bodyp></Bodyp>
-
-
+                <Bodyp />
             <Footer />
         </div>
+        // <div className="min-h-screen flex flex-col">
+        //     <Header />
+        //     <h1>Inicio</h1>
+        //     <Bodyp></Bodyp>
+
+
+        //     <Footer />
+        // </div>
         
 
          
-            );
             
-            }
+        );    
+        }
     
