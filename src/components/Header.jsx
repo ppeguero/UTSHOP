@@ -19,7 +19,7 @@ function Header() {
                   <a href="/carrito"><FontAwesomeIcon icon={faShoppingCart} /></a>
                 </li>
                 <li>
-                  <a href="/contáctanos"><FontAwesomeIcon icon={faPhone} /></a>
+                  <a href="/contactanos"><FontAwesomeIcon icon={faPhone} /></a>
               </li>
             </ul>
           </nav>

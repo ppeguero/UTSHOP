@@ -2,8 +2,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Inicio from './routes/Inicio.jsx';
-import Catálogo from './routes/Catálogo.jsx';
-import Contáctanos from './routes/Contáctanos.jsx';
+import Catalogo from './routes/Catalogo.jsx';
+import Contactanos from './routes/Contactanos.jsx';
 import Carrito from './routes/Carrito.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,12 +16,12 @@ const router = createBrowserRouter([
     errorElement: <h1>Error</h1>,
   },
   {
-    path: '/catálogo',
-    element: <Catálogo />,
+    path: '/catalogo',
+    element: <Catalogo />,
   },
   {
-    path: '/contáctanos',
-    element: <Contáctanos />,
+    path: '/contactanos',
+    element: <Contactanos />,
   },
   {
     path: '/carrito',
