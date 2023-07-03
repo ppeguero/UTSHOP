@@ -15,7 +15,7 @@ export default function Carrito(){
                     <p className="text-black text-base font-inter font-light">PAGO SEGURO</p>
                 </div>
                 <div className="w-1/2 flex justify-center ">
-                    <NavLink to="/catálogo" className="flex space-x-3">
+                    <NavLink to="/catalogo" className="flex space-x-3">
                         <div>
                             <p className="text-black text-base font-inter font-light hover:text-gray-400">SEGUIR COMPRANDO </p>
                         </div>
@@ -36,7 +36,7 @@ export default function Carrito(){
                                 <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
                             </div>          
                             <div>
-                                <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catálogo">COMPRAR AHORA</NavLink></button>    
+                                <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catalogo">COMPRAR AHORA</NavLink></button>    
                             </div>                  
                         </div>
                     </div>
