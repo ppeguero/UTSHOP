@@ -13,8 +13,17 @@ export default function Inicio(){
         <div>
             <Header />
 
-                <div className="border-solid border-gray-400 bg-white border-1 h-auto p-3">
-                    <div className="flex items-center space-x-2 justify-end mr-2">
+                <div className="border-solid border-gray-400 bg-white border-1 h-auto p-3 flex items-center">
+
+                    <div className="flex items-center w-1/2 ml-10">
+                        {/* <NavLink to="/dashboard">  */}
+                            <a href="/dashboard">
+                                <button className="bg-teal-500 p-2 rounded-md text-white hover:bg-teal-700 hover:text-gray-700" >DASHBOARD</button>
+                            </a>
+                        {/* </NavLink> */}
+                    </div>
+
+                    <div className="flex items-center space-x-2 justify-end mr-2 w-1/2">
                         <div className="border-solid border-2 border-sky-950 p-2 w-72">
                             <input type="text" name="search" id="inputSearch" placeholder='Buscar en el catálogo' className="uppercase w-[200px] bg-white"></input>
                         </div>
