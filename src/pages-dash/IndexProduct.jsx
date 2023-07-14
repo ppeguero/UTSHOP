@@ -70,7 +70,7 @@ function IndexProduct() {
                                                     <td>
                                                         <a class=" btn btn-warning mr-auto" > Editar</a>
                                                         {" "}
-                                                        <a class=" btn btn-danger mr-auto" > Eliminar</a>
+                                                        <a class=" btn btn-danger mr-auto" href='/DeleteProduct' > Eliminar</a>
                                                     </td>
                                                 </tr>
                                             ))}
