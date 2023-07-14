@@ -11,8 +11,8 @@ function AddUser() {
 
       <Formik
         initialValues={{
-          UserName: "",
-          Password: ""
+          userName: "",
+          password: ""
 
         }}
         // VER LOS VALORES QUE AGREGA EL USUARIO
@@ -32,15 +32,15 @@ function AddUser() {
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Usuario</Form.Label>
-                <Form.Control type="text" name="UserName"
+                <Form.Control type="text" name="userName"
                 onChange={handleChange}
-                value={values.UserName} />
+                value={values.userName} />
               </Form.Group>
               <Form.Group className="mb-3" >
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="text" name="Password"
+                <Form.Control type="text" name="password"
                 onChange={handleChange} 
-                value={values.Password}/>
+                value={values.password}/>
               </Form.Group>
               <button type='onSubmit' className='btn btn-success'>Guardar</button>
             </Form>
