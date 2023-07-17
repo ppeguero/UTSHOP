@@ -6,6 +6,8 @@ export default function Inicio(){
         <div className="min-h-screen flex flex-col">
             <Header />
             <h1>Inicio</h1>
+            
+
             <Footer />
         </div>
     )

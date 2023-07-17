@@ -3,6 +3,8 @@ import Footer from "../components/Footer"
 import Search from "../components/Search"
 import backpack from '/src/assets/backpack.png'
 import StartRating from '../components/StartRating'
+import backpackb from '/src/assets/backpack-black.png'
+import backpackazu from '/src/assets/mochilazu.png'
 
 // import TreeView from 'treeview-react-bootstrap';
 import TreeView from 'react-treeview';
@@ -95,9 +97,9 @@ export default function Catalogo() {
                                 </div>
                             </div>
                             <div className="card col" style={{ 'width': '18rem;' }}>
-                                <img src={backpack} style={{ 'width': '10rem', 'margin': 'auto' }} alt="..." />
+                                <img src={backpackb} style={{ 'width': '10rem', 'margin': 'auto' }} alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-text card-mochila-text">Mochila blanca ST</h5>
+                                    <h5 className="card-text card-mochila-text">Mochila Negra ST</h5>
                                 </div>
                                 <div className="card-body">
                                     <div className="row">
@@ -113,9 +115,9 @@ export default function Catalogo() {
                                 </div>
                             </div>
                             <div className="card col" style={{ 'width': '18rem;' }}>
-                                <img src={backpack} style={{ 'width': '10rem', 'margin': 'auto' }} alt="..." />
+                                <img src={backpackazu} style={{ 'width': '10rem', 'margin': 'auto' }} alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-text card-mochila-text">Mochila blanca ST</h5>
+                                    <h5 className="card-text card-mochila-text">Mochila Azul ST</h5>
                                 </div>
                                 <div className="card-body">
                                     <div className="row">
