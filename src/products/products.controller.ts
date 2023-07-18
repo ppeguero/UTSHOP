@@ -31,6 +31,12 @@ export class ProductsController {
         return this.productsService.getProduct(id);
     }
 
+    //Método para obtener productos por categoria
+    @Get('/category/:id')
+    getProductByCategory(@Param('id') category: string) : Promise<Product[]> {
+        return this.productsService.getProductByCategory(category);
+    }
+
     //Método para actualizar los datos de producto mediante ID y el cuerpo de los nuevos registros
 
     @Put(':id')

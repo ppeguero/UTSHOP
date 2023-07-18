@@ -29,6 +29,14 @@ export class ProductsService {
         })
     }
 
+    getProductByCategory(category: string): Promise<Product[]> {
+        return this.productRepository.findBy(
+            {
+                productCategory: category
+            }
+        )
+    }
+
     // Metodo para actualizar un producto 
     updateProduct(id: number, product: UpdateProductoDto ){
 
