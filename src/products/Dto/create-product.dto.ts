@@ -4,4 +4,5 @@ export class CrearProductoDto{
     productCategory: string
     productStock: number
     productDescription: string
+    productImage: Buffer
 }

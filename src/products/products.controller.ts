@@ -1,9 +1,10 @@
-import { Controller, Post, Body, Get, Param, ParseIntPipe, Put, Delete } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, ParseIntPipe, Put, Delete, UseInterceptors, UploadedFile, MaxFileSizeValidator, FileTypeValidator, ParseFilePipe } from '@nestjs/common';
 import { CrearProductoDto } from './Dto/create-product.dto';
 import { ProductsService } from './products.service';
 import { get } from 'https'
 import { Product } from './products.entity';
 import { UpdateProductoDto } from './Dto/update-user.dto';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('products')
 export class ProductsController {
@@ -14,7 +15,16 @@ export class ProductsController {
 
     //Método para crear un nuevo producto
     @Post()
-    createProduct(@Body() newProduct : CrearProductoDto){
+    @UseInterceptors(FileInterceptor('image'))
+    createProduct( 
+        @UploadedFile(new ParseFilePipe({
+            validators: [
+            new MaxFileSizeValidator({ maxSize: 1000000 }),
+            new FileTypeValidator({ fileType: 'image/png' }),
+            ],
+        })) image: Express.Multer.File,        
+        @Body() newProduct : CrearProductoDto){
+            newProduct.productImage = image.buffer;
         console.log(newProduct)
         return this.productsService.CreateProduct(newProduct)
     }

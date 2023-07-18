@@ -11,6 +11,11 @@ export class Product {
   @Column()
   productPrice: number;
 
+  @Column({
+    nullable: true,
+  })
+  productImage: Buffer;
+ 
   @Column()
   productCategory: string;
 
