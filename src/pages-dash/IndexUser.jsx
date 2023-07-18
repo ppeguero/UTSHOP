@@ -30,21 +30,21 @@ function IndexUser() {
             <NavDash />
             <div className="container mx-20 w-50  p-20">
           
-                <div class="row">
+                <div className="row">
                    
-                    <div class="offset-10 col-5 mb-5">
+                    <div className="offset-10 col-5 mb-5">
 
-                        <a class="btn btn-success" href="/AddUser"> <i class="fa-solid fa-user" ></i>Nuevo</a>
+                        <a className="btn btn-success" href="/AddUser"> <i className="fa-solid fa-user" ></i>Nuevo</a>
                     </div>
                 </div>
-                <div class="offset-2 col-11 mb-5">
-                    <div class="card border">
-                        <div class="card-header bg-dark">
-                            <h1 class="text-white"><strong>Lista de usuarios</strong></h1>
+                <div className="offset-2 col-11 mb-5">
+                    <div className="card border">
+                        <div className="card-header bg-dark">
+                            <h1 className="text-white"><strong>Lista de usuarios</strong></h1>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="tblArticulo" width="100%" cellspacing="0">
+                        <div className="card-body">
+                            <div className="table-responsive">
+                                <table className="table table-bordered" id="tblArticulo" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th> Nombre</th>
@@ -64,9 +64,9 @@ function IndexUser() {
 
 
                                                     <td>
-                                                        <a class=" btn btn-warning mr-auto" > Editar</a>
+                                                        <a className=" btn btn-warning mr-auto" > Editar</a>
                                                         {" "}
-                                                        <a class=" btn btn-danger mr-auto" > Eliminar</a>
+                                                        <a className=" btn btn-danger mr-auto" > Eliminar</a>
                                                     </td>
                                                 </tr>
                                             ))}

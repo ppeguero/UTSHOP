@@ -15,7 +15,7 @@ function Search() {
                 <div className='subtitle'>
                     Buscar en el catálogo
                 </div>
-                <div className='search row' style={{'text-align': 'left'}}>
+                <div className='search row' style={{'textAlign': 'left'}}>
                     <div className='col-1'>
                  <FontAwesomeIcon icon={faSearch} className='fa-2xl'/></div>
                  <div className='col-11'>

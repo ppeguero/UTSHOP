@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavDash from './NavDash'
 import Form from 'react-bootstrap/Form';
-import { Formik} from 'formik';
+import { Formik } from 'formik';
 
-function AddProduct() {
+function EditProduct() {
   return (
     <>
       <NavDash />
@@ -16,32 +16,23 @@ function AddProduct() {
           productCategory: "",
           productStock: "",
           productDescription: "",
-          image: ""
+
         }}
         // VER LOS VALORES QUE AGREGA EL USUARIO
         onSubmit={async(values, actions) => { 
-            console.log(values);
-            
-            await axios.post('http://localhost:3000/products', {
-              productName:values.productName, 
-              productPrice:values.productPrice,
-              productCategory: values.productCategory,
-              productStock: values.productStock,
-              productDescription: values.productDescription,
-              image: values.image}, {
-              headers: {
-                'Content-Type': 'multipart/form-data'
-              }
-          })
+            console.log(values)
+            await axios.patch('http://localhost:3000/products', values)
             actions.resetForm()
-             alert('Datos agregados correctamente');             
+             alert('Datos agregados correctamente')
+          
+             
         }}
         >
-        {({handleChange, handleSubmit, setFieldValue, values}) => (
+        {({handleChange, handleSubmit, values}) => (
 
           <div className='container mx-15 w-50  p-20'>
-            <h2 className="font-black text-3lx text-center">Agregar nuevo producto</h2>
-            <Form onSubmit={handleSubmit}  encType="multipart/form-data">
+            <h2 className="font-black text-3lx text-center">  Editar producto</h2>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Producto</Form.Label>
                 <Form.Control type="text" name="productName"
@@ -66,15 +57,6 @@ function AddProduct() {
                 onChange={handleChange} 
                 value={values.productStock}/>
               </Form.Group>
-              <Form.Group className='mb-3'>
-                <Form.Label>
-                  Imagen
-                </Form.Label>
-                <Form.Control type='file' name='image' accept='image/*'
-                onChange={(e) => setFieldValue('image', e.currentTarget.files[0])}
-                >
-                </Form.Control>
-              </Form.Group>
               <Form.Group className="mb-3" >
                 <Form.Label>Descripción</Form.Label>
                 <Form.Control type="text" name="productDescription"
@@ -93,4 +75,4 @@ function AddProduct() {
   )
 }
 
-export default AddProduct
+export default EditProduct
