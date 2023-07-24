@@ -32,16 +32,16 @@ export default function Inicio(){
 
                     <div className="absolute inset-y-72 right-64">
                         <NavLink to="/catalogo">
-                            <button className="rounded-lg  bg-teal-500 text-white p-2 hover:bg-teal-400 drop-shadow-md ">Ir al catálogo</button>
+                            <button className="rounded-lg  bg-teal-500 text-white p-2 hover:bg-teal-400 drop-shadow-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Ir al catálogo</button>
                         </NavLink>
                     </div>
                 </section>
 
                 <section>
 
-                    <div className="flex flex-wrap mt-24 justify-center space-x-72 mb-24" >
+                    <div className="flex flex-wrap mt-24 justify-center space-x-72 mb-24 " >
 
-                        <div className="bg-gray-200 w-52 h-52 flex row">
+                        <div className="bg-gray-200 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                             <div>
                                 <h3 className="flex justify-center text-2xl text-teal-500 font-bold mt-2">Elige</h3>
                             </div>  
@@ -53,7 +53,7 @@ export default function Inicio(){
                             </div>
                         </div>
 
-                        <div className="bg-gray-200 w-52 h-52 flex row">
+                        <div className="bg-gray-200 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                             <div>
                                 <h3 className="flex justify-center text-2xl text-teal-500 font-bold mt-2">Paga</h3>
                             </div>  
@@ -65,7 +65,7 @@ export default function Inicio(){
                             </div>
                         </div>
 
-                        <div className="bg-gray-200 w-52 h-52 flex row">
+                        <div className="bg-gray-200 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                             <div>
                                 <h3 className="flex justify-center text-2xl text-teal-500 font-bold mt-2">Recoge</h3>
                             </div>  
@@ -114,12 +114,12 @@ export default function Inicio(){
                     <div className="bg-white pt-10">
 
                         <div className="flex justify-center">
-                            <h2 className="text-teal-500 text-5xl font-semibold text-center w-1/4">¿Dónde recojo mis productos?</h2>
+                            <h2 className="text-teal-500 text-5xl font-semibold text-center w-1/4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">¿Dónde recojo mis productos?</h2>
                         </div>
 
                         <div className="flex items-center p-10">
 
-                                <div className="flex-1 ml-28">
+                                <div className="flex-1 ml-28 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                                     <iframe className="w-96 h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1264.849903223069!2d-86.84709312504087!3d21.049695191782323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e81c385c4677f%3A0x539479cfc0929edb!2sUniversidad%20Tecnol%C3%B3gica%20de%20Canc%C3%BAn%2C!5e0!3m2!1ses-419!2smx!4v1689980658216!5m2!1ses-419!2smx" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
 

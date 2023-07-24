@@ -1,4 +1,4 @@
-import Header from "../components/Header"
+import Header from "../components/header"
 import Footer from "../components/Footer"
 import Search from "../components/Search"
 import backpack from '/src/assets/backpack.png'
@@ -67,8 +67,8 @@ export default function Catalogo() {
                             <button onClick={collapseAll}>Categorías</button>
                         </div>
                         <br></br>
-                        <p>Colores</p>
-                        <div className="flex row">
+                        <p className="flex justify-center text-2xl">Colores</p>
+                        <div className="flex row p-10 ">
                             <button type="button" className="btn btn-outline-primary">Azul</button>
                             <button type="button" className="btn btn-outline-secondary">Gris</button>
                             <button type="button" className="btn btn-outline-success">Verde</button>

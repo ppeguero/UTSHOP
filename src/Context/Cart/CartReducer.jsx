@@ -10,16 +10,28 @@ import {
     CLEAR,
   } from "./CartTypes.js";
   
+  // export const sumItems = (cartItems) => {
+  //   Storage(cartItems);
+  //   let itemCount = cartItems.reduce(
+  //     (total, product) => total + product.quantity,
+  //     0
+  //   );
+  //   let totalCost = cartItems.reduce((total, product) => total + product.productPrice * product.quantity, 0)
+  //     .toFixed(2);
+  //   return { itemCount, totalCost };
+  // };
+
   export const sumItems = (cartItems) => {
     Storage(cartItems);
     let itemCount = cartItems.reduce(
       (total, product) => total + product.quantity,
       0
     );
-    let totalCost = cartItems.reduce((total, product) => total + product.productPrice * product.quantity, 0)
-      .toFixed(2);
+    let totalCost = cartItems.reduce((total, product) => total + product.productPrice * product.quantity, 0);
+  
     return { itemCount, totalCost };
   };
+  
 
   const Storage = (cartItems) => {
     localStorage.setItem(

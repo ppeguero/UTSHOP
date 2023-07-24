@@ -1,10 +1,11 @@
-import Header from "../components/Header"
+import Header from '../components/header';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import Footer from "../components/Footer";
 import React, { useState, useReducer , useEffect, useContext } from 'react';
 import CartContext from "../Context/Cart/CartContext";
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 
 const products = [
     {
@@ -22,6 +23,8 @@ const products = [
         name: 'drums',
         price: 5
     },];
+
+
 
 function getTotal(cart) {
     return cart.reduce((totalCost, item) => totalCost + item.price, 0);
@@ -67,6 +70,10 @@ export default function Carrito() {
         setCart(action);
     }
 
+
+    const amount = totalCost.toFixed(2);
+    const currency = "MXN";
+    const style = { "layout": "vertical" };
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -120,11 +127,43 @@ export default function Carrito() {
                         </div>
 
                         <div>
-                            <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catalogo">COMPRAR AHORA</NavLink></button>
+                            
+            <PayPalScriptProvider options={{ "client-id": "AR6rQwFo6KJzoXVe07u-OJMoyVyVzIVNT7-y6iLd2DJNfe7wZAuqcbKhOtl5v4CD2eXCwbSnc-8w477z", currency: "MXN" }}>
+                  <PayPalButtons
+                    style={style}
+                    disabled={false}
+                    forceReRender={[amount, currency, style]}
+                    fundingSource={undefined}
+                    createOrder={(data, actions) => {
+                      return actions.order
+                        .create({
+                          purchase_units: [
+                            {
+                              amount: {
+                                currency_code: currency,
+                                value: amount,
+                              },
+                            },
+                          ],
+                        })
+                        .then((orderId) => {
+                          // Your code here after create the order
+                          return orderId;
+                        });
+                    }}
+                    onApprove={function (data, actions) {
+                      return actions.order.capture().then(function () {
+                        alert("Transacción completada por " + data.payer.name.given_name);
+                        // Your code here after capturing the order
+                      });
+                    }}
+                  />
+                </PayPalScriptProvider>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div className="bg-white h-auto flex p-12">
                 <div className="flex justify-start">
