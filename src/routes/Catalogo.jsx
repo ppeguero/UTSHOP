@@ -1,25 +1,21 @@
-import Header from "../components/header"
+import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Search from "../components/Search"
 import backpack from '/src/assets/backpack.png'
 import StartRating from '../components/StartRating'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, createContext } from 'react';
 import { Buffer } from "buffer";
 import axios from 'axios';
+import CartContext from "../Context/Cart/CartContext"
 
 
-// import TreeView from 'treeview-react-bootstrap';
-import TreeView from 'react-treeview';
+const dataSource = [
+    ['Apple', 'Orange'],
+    ['Facebook', 'Google'],
+    ['Celery', 'Cheeseburger'],
+];
 
-
-
-    const dataSource = [
-        ['Apple', 'Orange'],
-        ['Facebook', 'Google'],
-        ['Celery', 'Cheeseburger'],
-    ];
-
-    const collapsedBookkeeping = 1;
+const collapsedBookkeeping = 1;
 
 function handleClick(i) {
     let [...collapsedBookkeeping] = this.state.collapsedBookkeeping;
@@ -34,28 +30,28 @@ function collapseAll() {
 };
 
 export default function Catalogo() {
+    const { addToCart, increase, cartItems, sumItems, itemCount } =  useContext(CartContext);
 
-const [Products, setProducts] = useState([]);
+    const [Products, setProducts] = useState([]);
 
-// useEffect(() => {
-//     // Lógica para obtener los usuarios de la base de datos al cargar el componente
-//     // fetchProducts();
-// });
+    // useEffect(() => {
+    //     // Lógica para obtener los usuarios de la base de datos al cargar el componente
+    //     // fetchProducts();
+    // });
 
-const fetchProducts = async (category) => {
+    const fetchProducts = async (category) => {
 
-    if(!category){
-        category="Mochila";
-    } else {
-        category = category.target.id;
-    }
+        if (!category) {
+            category = "Mochila";
+        } else {
+            category = category.target.id;
+        }
 
-    const response = await axios.get('http://localhost:3000/products/category/'+category); 
-    // Ruta de la API para obtener usuarios
-    setProducts(response.data); //Metiendo la respuesta(data) al estado
-    console.log(category);
-};
-
+        const response = await axios.get('http://localhost:3000/products/category/' + category);
+        // Ruta de la API para obtener usuarios
+        setProducts(response.data); //Metiendo la respuesta(data) al estado
+        console.log(category);
+    };
 
     return (
 
@@ -67,7 +63,7 @@ const fetchProducts = async (category) => {
                 <div className="row">
                     <div className="cat-menu col-3">
 
-                        <div className="px-16 ">
+                        <div className="px-30 text-light bg-dark text-center ">
                             <button onClick={collapseAll}>Categorías</button>
                             {/* {dataSource.map((node, i) => {
                                 // Let's make it so that the tree also toggles when we click the
@@ -86,6 +82,16 @@ const fetchProducts = async (category) => {
                                     </TreeView>
                                 );
                             })} */}
+
+                        </div>
+                        <br></br>
+                        <p>Colores</p>
+                        <div>
+                            <button type="button" className="btn btn-outline-primary">Azul</button>
+                            <button type="button" className="btn btn-outline-secondary">Gris</button>
+                            <button type="button" className="btn btn-outline-success">Verde</button>
+                            <button type="button" className="btn btn-light">Blanco</button>
+                            <button type="button" className="btn btn-outline-dark">Negro</button>
                         </div>
                     </div>
                     <div className="cat-body col-9">
@@ -103,43 +109,33 @@ const fetchProducts = async (category) => {
                             </ul>
                         </div>
 
-
                         <div className="row cat-cards">
 
                             {Products.map((p) => (
 
-                            <div className="card col" style={{ 'width': '18rem' }} key={p.pkProduct}>
-                                
-                                    <div>
-                                        { p.productImage !== null &&
-                                            <img src={`data:image/png;base64,${Buffer.from(p.productImage.data).toString('base64')}`} />
-                                        }
-                                    </div> 
-                                    <div>
-                                        {
-                                            p.productImage === null &&
-                                                <img src={backpack} style={{ 'width': '10rem', 'margin': 'auto' }} alt="..." />
-                                        }
-                                    </div>
+                                <div className="card col" key={p.pkProduct}>
+                                    <div className="card-body">
+                                            {p.productImage !== null &&
+                                                <img src={`data:image/png;base64,${Buffer.from(p.productImage.data).toString('base64')}`} />
+                                            }
+                                            {
+                                                p.productImage === null &&
+                                                <img src={backpack} width={150} height={200} alt="..." />
+                                            }
+                                            <h5 className="card-text card-mochila-text">{p.productName}</h5>
 
-                                <div className="card-body">
-                                    <h5 className="card-text card-mochila-text">{p.productName}</h5>
-                                </div>
-                                <div className="card-body">
-                                    <div className="row">
-                                        <div className="col-9">
-                                            <StartRating /></div>
-                                        <div className="col-3">
-                                            <p className="card-text"><small className="text-body-secondary">${p.productPrice}</small></p>
+                                            <div className="col-9">
+                                                <StartRating /></div>
+                                            <div className="col-3">
+                                                <p className="card-text"><small className="text-body-secondary">${p.productPrice}</small></p>
+                                            </div>
+
+
+                                        <div className="row">
+                                            <a href="#" className="btn btn-dark btn-add-cart"  onClick={() => addToCart(p)}>Agregar al Carrito</a>
                                         </div>
-
-                                    </div>
-
-                                    <div className="row">
-                                        <a href="#" className="btn btn-dark btn-add-cart">Agregar al Carrito (0)</a>
                                     </div>
                                 </div>
-                            </div>
 
                             ))}
 

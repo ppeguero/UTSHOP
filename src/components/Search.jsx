@@ -17,9 +17,9 @@ function Search() {
                 </div>
                 <div className='search row' style={{'textAlign': 'left'}}>
                     <div className='col-1'>
-                 <FontAwesomeIcon icon={faSearch} className='fa-2xl'/></div>
+                 <FontAwesomeIcon icon={faSearch} className='fa-1xl'/></div>
                  <div className='col-11'>
-                    <input type="text" name="search" id="inputSearch" placeholder='Buscar' />
+                    <input type="text" name="search" id="inputSearch" placeholder='Buscar' style={{'width': '100%', 'backgroundColor': 'transparent'}} />
 
                  </div>
                 </div>

@@ -4,8 +4,11 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 
+import CartState from "./Context/Cart/CartState.jsx";
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>
+
+    <CartState>
+      <App />
+    </CartState>
 )

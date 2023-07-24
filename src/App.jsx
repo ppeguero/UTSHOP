@@ -15,7 +15,6 @@ import DeleteProduct from './pages-dash/DeleteProduct.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 const router = createBrowserRouter([
   {
     path: '/',
