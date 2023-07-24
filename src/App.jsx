@@ -14,6 +14,7 @@ import DeleteProduct from './pages-dash/DeleteProduct.jsx';
 import EditProduct from './pages-dash/EditProduct.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './routes/Login.jsx';
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
   {
     path: '/EditProduct',
     element: <EditProduct />
+  },
+  {
+    path: '/Login',
+    element: <Login />
   }
 ])
 

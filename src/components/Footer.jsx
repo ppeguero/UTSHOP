@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import IrArriba from './IrArriba';
-
+import { NavLink } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -21,6 +21,9 @@ function Footer() {
                     <a href="https://www.facebook.com/UTdeCancun" target='_blank'><FontAwesomeIcon icon={faFacebookSquare} /></a>
                     <a href="http://www.utcancun.edu.mx/" target='_blank'><FontAwesomeIcon icon={faGlobe} /></a>
                 </div>
+            </div>
+            <div>
+                <NavLink to="/Login"><p className='text-sm hover:underline mt-2 px-10'>Inicio de sesión administradores</p></NavLink>
             </div>
         </div>
     </footer>

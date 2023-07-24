@@ -27,10 +27,10 @@ export default function Inicio(){
                 <section className="relative">
                     <img className="object-cover static contrast-50 sm:object-center hue-rotate-15 lg:h-96  sm: w-[100%] sm:h-40" src="./src/assets/carousel-3.jpg"></img>
                     
-                    <h1 className="w-80 absolute inset-y-32 right-40 text-5xl text-center font-bold text-white drop-shadow-xl">Tus <span className="text-teal-500">productos</span>  favoritos...</h1>
+                    <h1 className="w-80 absolute xl:inset-y-32 xl:right-40 xl:text-5xl xl:text-center font-bold text-white drop-shadow-xl ">Tus <span className="text-teal-500">productos</span>  favoritos...</h1>
                     <h2 className="absolute inset-y-60 right-56 font-bold text-white drop-shadow-sm text-2xl">en un <span className="text-teal-500">solo</span> lugar.</h2>
 
-                    <div className="absolute inset-y-72 right-64">
+                    <div className="absolute xl:inset-y-72 xl:right-64">
                         <NavLink to="/catalogo">
                             <button className="rounded-lg  bg-teal-500 text-white p-2 hover:bg-teal-400 drop-shadow-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Ir al catálogo</button>
                         </NavLink>
@@ -39,9 +39,9 @@ export default function Inicio(){
 
                 <section>
 
-                    <div className="flex flex-wrap mt-24 justify-center space-x-72 mb-24 " >
+                    <div className="flex xl:flex-row flex-col mt-24 justify-center xl:space-x-72 items-center mb-24 " >
 
-                        <div className="bg-gray-200 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <div className="bg-gray-200 mb-4 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-md">
                             <div>
                                 <h3 className="flex justify-center text-2xl text-teal-500 font-bold mt-2">Elige</h3>
                             </div>  
@@ -53,7 +53,7 @@ export default function Inicio(){
                             </div>
                         </div>
 
-                        <div className="bg-gray-200 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <div className="bg-gray-200 mb-4 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-md">
                             <div>
                                 <h3 className="flex justify-center text-2xl text-teal-500 font-bold mt-2">Paga</h3>
                             </div>  
@@ -65,7 +65,7 @@ export default function Inicio(){
                             </div>
                         </div>
 
-                        <div className="bg-gray-200 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <div className="bg-gray-200 w-52 h-52 flex row transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-md">
                             <div>
                                 <h3 className="flex justify-center text-2xl text-teal-500 font-bold mt-2">Recoge</h3>
                             </div>  
