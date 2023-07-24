@@ -69,7 +69,6 @@ function IndexProduct() {
 
                                                     <td>
                                                         <a className=" btn btn-warning mr-auto" href="/EditProduct" > Editar</a>
-                                                        {" "}
                                                         <a className=" btn btn-danger mr-auto" href='/DeleteProduct' > Eliminar</a>
                                                     </td>
                                                 </tr>

@@ -110,10 +110,10 @@ export default function Carrito() {
 
                         <div>
                             {cartItems.map(product => (
-                                <div key={product.productName}>
+                                <div className="" key={product.productName}>
                                     <span role="img" aria-label={product.productName}>{product.productName}</span>
 
-                                    <button onClick={() => increase(product)}>+</button><b>{product.quantity}</b>
+                                    <button className="" onClick={() => increase(product)}>+</button><b>{product.quantity}</b>
                                     <button onClick={() => decrease(product)}>-</button>
                                 </div>
                             ))}

@@ -65,28 +65,10 @@ export default function Catalogo() {
 
                         <div className="px-30 text-light bg-dark text-center ">
                             <button onClick={collapseAll}>Categorías</button>
-                            {/* {dataSource.map((node, i) => {
-                                // Let's make it so that the tree also toggles when we click the
-                                // label. Controlled components make this effortless.
-                                const label =
-                                    <span className="node" onClick={handleClick.bind(null, i)}>
-                                        Tela {i}
-                                    </span>;
-                                return (
-                                    <TreeView
-                                        key={i}
-                                        nodeLabel={label}
-                                        collapsed={collapsedBookkeeping[i]}
-                                        onClick={handleClick.bind(null, i)}>
-                                        {node.map(entry => <div className="info" key={entry}>{entry}</div>)}
-                                    </TreeView>
-                                );
-                            })} */}
-
                         </div>
                         <br></br>
                         <p>Colores</p>
-                        <div>
+                        <div className="flex row">
                             <button type="button" className="btn btn-outline-primary">Azul</button>
                             <button type="button" className="btn btn-outline-secondary">Gris</button>
                             <button type="button" className="btn btn-outline-success">Verde</button>
