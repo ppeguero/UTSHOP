@@ -5,6 +5,7 @@ import { Repository } from 'typeorm';
 import { CrearUserDto } from './Dto/create-user.dto';
 import { privateDecrypt } from 'crypto';
 import { UpdateUserDto } from './Dto/update-user.dto';
+import { UnauthorizedException } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
@@ -44,7 +45,23 @@ export class UsersService {
         })
 
     }
-
+    async validateUser(userName: string, password: string): Promise<{ user: User }> {
+        const users = await this.getUsersLog(userName);
+      
+        const user = users.find((user) => user.password === password && user.userName === userName);
+      
+        if (!user) {
+          throw new UnauthorizedException('Credenciales inválidas');
+        }
+      
+        return { user };
+      }
+      
+      async getUsersLog(userName: string) {
+        return this.userRepository.find({
+          where: { userName },
+        });
+      }
 
 }
 

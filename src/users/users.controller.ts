@@ -46,4 +46,17 @@ export class UsersController {
         return this.usersService.DeleteUser(id)
         
     }
+
+    @Post('login')
+    async login(@Body() loginData: { userName: string; password: string }) {
+      console.log(loginData);
+      const { userName, password } = loginData;
+      const { user } = await this.usersService.validateUser(userName, password);
+      console.log(user);
+      if (!user) {
+        return null
+      } else {
+        return { user };
+      }
+    }   
 }
