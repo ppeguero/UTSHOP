@@ -96,37 +96,51 @@ export default function Carrito() {
                 </div>
             </nav>
 
-            <div className="bg-zinc-200 h-auto flex items-center justify-center p-20">
-                <div className="bg-white h-96 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md">
+            <div className="bg-zinc-200 h-fit flex items-center justify-center p-20">
+                <div className="bg-white h-fit p-5 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md">
                     <div className="flex items-center flex-col ">
                         <div className="mb-8">
                             <FontAwesomeIcon icon={faCartShopping} style={{ color: "#000000", }} className="fa-4x" />
                         </div>
-                        <h1>
-          Shopping Cart
-          <span> ({itemCount})</span>
-        </h1>
-        <h2>
-            Total: $ {totalCost}
-        </h2>
+
+
                         <div>
-                        {cartItems.length <= 0 &&
-                            <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
-                                            }
+                            {cartItems.length <= 0 &&
+                                <div className='flex row justify-center'> 
+                                    <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
+                                    <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catalogo">COMPRAR AHORA</NavLink></button>    
+                                </div>
+                            }
                         </div>
-
+                        
                         <div>
-                            {cartItems.map(product => (
-                                <div className="" key={product.productName}>
-                                    <span role="img" aria-label={product.productName}>{product.productName}</span>
+                            {cartItems.length > 0 &&
+                                <div>
+                                    <h1 className='font-bold text-black text-2xl mb-6 text-center uppercase'>
+                                        Carrito de compras
 
-                                    <button className="" onClick={() => increase(product)}>+</button><b>{product.quantity}</b>
-                                    <button onClick={() => decrease(product)}>-</button>
+                                    </h1>
+                                    <div className='space-y-4'>
+                            {cartItems.map(product => (
+                                <div className="flex row " key={product.productName}>
+                                    <div className='flex justify-between'> 
+                                        <span role="img" aria-label={product.productName}>{product.productName}</span>
+                                        <b  >Cantidad: {product.quantity}</b>
+                                    </div>
+                                    <div className='flex items-center space-x-2 justify-center mt-2'> 
+                                        <button className="text-xl w-10 bg-white text-green-400 border-2 border-solid hover:hover:-translate-y-1 hover:scale-110 duration-300 rounded-md" onClick={() => increase(product)}>+</button>
+                                        <button className='text-xl w-10 bg-white text-red-400 border-2 border-solid hover:hover:-translate-y-1 hover:scale-110 duration-300 rounded-md' onClick={() => decrease(product)}>-</button>
+                                    </div>
                                 </div>
                             ))}
+                            <div className=''>
+                                <h2>
+                                    Total a pagar: ${totalCost}
+                                </h2>
+                            </div>
                         </div>
 
-                        <div>
+                        <div className='mt-2'>
                             
             <PayPalScriptProvider options={{ "client-id": "AR6rQwFo6KJzoXVe07u-OJMoyVyVzIVNT7-y6iLd2DJNfe7wZAuqcbKhOtl5v4CD2eXCwbSnc-8w477z", currency: "MXN" }}>
                   <PayPalButtons
@@ -160,16 +174,20 @@ export default function Carrito() {
                   />
                 </PayPalScriptProvider>
                         </div>
+                                </div>
+                            }
+                        </div>
+                        
                     </div>
                 </div>
             </div>
 
 
-            <div className="bg-white h-auto flex p-12">
+            {/* <div className="bg-white h-auto flex p-12">
                 <div className="flex justify-start">
                     <h3 className="font-bold text-black text-xl">LO MÁS VENDIDO</h3>
                 </div>
-            </div>
+            </div> */}
 
             <Footer />
         </div>

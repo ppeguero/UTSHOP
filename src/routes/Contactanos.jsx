@@ -56,9 +56,7 @@ export default function Contáctanos(){
 
         </div>
 
-        <div className="flex justify-center">
-            <Form />
-        </div>
+
 
 
         <Footer />
