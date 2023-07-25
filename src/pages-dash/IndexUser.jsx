@@ -28,7 +28,7 @@ function IndexUser() {
     return (
         <>
             <NavDash />
-            <div className="container mx-20 w-50  p-20">
+            <div className="container mx-20 w-50 p-20">
           
                 <div className="row">
                    
@@ -48,8 +48,8 @@ function IndexUser() {
                                     <thead>
                                         <tr>
                                             <th> Nombre</th>
-                                            <th> Apellido</th>
-                                            <th>Contraseña</th>
+                                            <th> Contraseña</th>
+                                            <th>Fecha de creación</th>
                                             <th> Acciones</th>
                                         </tr>
 

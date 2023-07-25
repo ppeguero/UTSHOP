@@ -55,16 +55,16 @@ const Login = ({ setIsLoggedIn, isLoggedIn }) => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'url("/assets/fondo (2).jpg")' }}>
-      <div style={{ borderColor: "#ffd7b2" }} className="border-2 rounded-lg p-6 mx-10 shadow-md bg-white w-[400px]">
-        <h2 className="text-2xl font-bold mb-6">Iniciar Sesión</h2>
+    <div className="flex items-center justify-center h-screen bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'url("./src/assets/background-image.jpg")' }}>
+      <div style={{ borderColor: "#32a873" }} className="border-3 rounded-lg p-6 mx-10 shadow-md bg-white w-[400px]">
+        <h2 className="text-2xl font-bold mb-6">Iniciar sesión como administrador</h2>
         <form onSubmit={handleSubmit}>
         <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="userName">
               Nombre de Usuario
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="userName"
               type="text"
               placeholder="Ingrese su nombre de usuario"
@@ -79,7 +79,7 @@ const Login = ({ setIsLoggedIn, isLoggedIn }) => {
             </label>
             <div className="flex">
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-white"
                 id="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Ingrese su contraseña"
@@ -100,7 +100,7 @@ const Login = ({ setIsLoggedIn, isLoggedIn }) => {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="flex justify-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Iniciar sesión
