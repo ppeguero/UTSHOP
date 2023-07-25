@@ -47,9 +47,9 @@ function IndexUser() {
                                 <table className="table table-bordered" id="tblArticulo" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th> Nombre</th>
-                                            <th> Apellido</th>
-                                            <th>Contraseña</th>
+                                            <th> Nombre de usuario</th>
+                                            <th> Contraseña</th>
+                                            <th>Fecha de creación</th>
                                             <th> Acciones</th>
                                         </tr>
 

@@ -10,7 +10,7 @@ function Footer() {
         <div className="container mx-auto px-2 text-white">
             <div className='flex justify-between items-center pb-6'>
                 <div className='bg-white border-solid border-inherit w-1/2 h-px ml-24'></div>
-                <div className='border-solid border-white border-2'><button className='hover:text-slate-950 px-6 py-1 hover:bg-white transition duration-300'></button><IrArriba /></div>
+                <div className='border-solid border-white border-2'><button className='hover:text-slate-950 px-6 py-1 hover:bg-white transition duration-300'><IrArriba /></button></div>
                 <div className='bg-white border-solid border-inherit w-1/2 h-px mr-24'></div>
             </div>
             <div className="flex justify-between items-center px-10">

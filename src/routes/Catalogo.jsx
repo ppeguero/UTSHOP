@@ -1,4 +1,4 @@
-import Header from "../components/Header"
+import Header from "../components/header"
 import Footer from "../components/Footer"
 import Search from "../components/Search"
 import backpack from '/src/assets/backpack.png'
@@ -87,16 +87,16 @@ export default function Catalogo() {
                     <div className="cat-menu col-3">
 
                         <div className="px-30 text-light bg-dark text-center ">
-                            <button onClick={collapseAll}>Categorías</button>
+                            {/* <button onClick={collapseAll}>Categorías</button> */}
                         </div>
                         <br></br>
-                        <p className="flex justify-center text-2xl">Colores</p>
+                        {/* <p className="flex justify-center text-2xl">Colores</p> */}
                         <div className="flex row p-10 ">
-                            <button type="button" className="btn btn-outline-primary">Azul</button>
+                            {/* <button type="button" className="btn btn-outline-primary">Azul</button>
                             <button type="button" className="btn btn-outline-secondary">Gris</button>
                             <button type="button" className="btn btn-outline-success">Verde</button>
                             <button type="button" className="btn btn-light">Blanco</button>
-                            <button type="button" className="btn btn-outline-dark">Negro</button>
+                            <button type="button" className="btn btn-outline-dark">Negro</button> */}
                         </div>
                     </div>
                     <div className="cat-body col-9">

@@ -3,11 +3,22 @@ import Footer from "../components/Footer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBuilding, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import Form from "../components/Form"
+import { NavLink } from "react-router-dom"
 
 export default function Contáctanos(){
     return (
         <div className="min-h-screen flex flex-col">
         <Header />
+        <nav className="bg-teal-500 border-2 border-solid border-teal-600 sm: p-3">
+                    <ul className="flex text-white text-sm drop-shadow-lg lg:space-x-8 lg:ml-6 lg:p-2 lg:text-lg sm:space-x-4 sm:ml-2 ">
+                        <NavLink to="/">
+                            <li className="hover:text-zinc-200">Inicio</li>
+                        </NavLink>
+                        <NavLink to="/Catalogo">
+                            <li className="hover:text-zinc-200">Catálogo</li>
+                        </NavLink>
+                    </ul>
+                </nav>
 
         <div className="relative ">
             <img
@@ -57,7 +68,7 @@ export default function Contáctanos(){
         </div>
 
         <div className="flex justify-center">
-            <Form />
+            {/* <Form /> */}
         </div>
 
 

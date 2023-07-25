@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import Header from '../components/header';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faCartShopping } from '@fortawesome/free-solid-svg-icons';
@@ -53,7 +53,7 @@ export default function Carrito() {
 
 
             <div className='row cart-items-container'>
-                <div className='col-7'>
+                <div className='col-7 relative'>
                     <ol className="list-group ">
                         {cartItems.map(product => (
                             <li className="list-group-item d-flex justify-content-between align-items-start" key={product.productName}>
@@ -79,12 +79,21 @@ export default function Carrito() {
                         ))}
 
                         {cartItems.length <= 0 &&
-                            <li className="list-group-item d-flex justify-content-between align-items-start">
-                                <div className="mb-8">
-                                    <FontAwesomeIcon icon={faCartShopping} style={{ color: "#000000", }} className="fa-4x" />
+                        <div className='bg-zinc-200 h-fit flex items-center justify-center p-20'>
+                            <div className='bg-white h-fit p-5 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md'>
+                                <div className='flex flex-col '>
+                                    <div className="mb-8 flex justify-center">
+                                        <FontAwesomeIcon icon={faCartShopping} style={{ color: "#000000", }} className="fa-4x" />
+                                    </div>
+                                    <div>
+                                    <div className='flex row justify-center'> 
+                                 <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
+                                 <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catalogo">COMPRAR AHORA</NavLink></button>    
+                           </div>
+                                    </div>
                                 </div>
-                                <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
-                            </li>
+                            </div>
+                        </div>
                         }
                     </ol>
                 </div>
@@ -93,7 +102,7 @@ export default function Carrito() {
                         <div className="bg-white h-96 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md cart-paypal" style={{ height: '100%' }}>
                             <div className='cart-total'>
                                 <h1>
-                                    Shopping Cart
+                                    Carrito de compras
                                     <span> ({itemCount})</span>
                                 </h1>
                                 <h2>
@@ -140,11 +149,6 @@ export default function Carrito() {
 
 
 
-            <div className="bg-white h-auto flex p-12">
-                <div className="flex justify-start">
-                    <h3 className="font-bold text-black text-xl">LO MÁS VENDIDO</h3>
-                </div>
-            </div>
 
             <Footer />
         </div>
