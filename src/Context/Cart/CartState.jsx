@@ -3,6 +3,7 @@ import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
 import { sumItems } from "./CartReducer";
 
+
 const CartState = ({ children }) => {
 
   //Local Storage
@@ -45,7 +46,7 @@ const CartState = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider
+    <CartContext.Provider 
       value={{
         showCart: state.showCart,
         cartItems: state.cartItems,
@@ -64,3 +65,4 @@ const CartState = ({ children }) => {
 };
 
 export default CartState;
+

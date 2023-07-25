@@ -28,6 +28,7 @@
     "react-router-dom": "^6.14.0",
     "react-star-ratings": "^2.3.0",
     "react-treeview": "^0.4.7",
+    "styled-component": "^2.8.0",
     "treeview-react-bootstrap": "^0.4.6"
   },
   "devDependencies": {

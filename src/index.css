@@ -99,4 +99,35 @@ button {
     color: #000;
   }
 
-  
+  .product-quantity {
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .styleprod{
+    margin: 55px;
+    box-shadow: #a0a2a5;
+    margin-right: 100px;
+  }
+  .cart-paypal {
+    flex-direction: column;
+    gap: 250px;
+  }
+
+  .cart-total {
+    color: rgb(30, 131, 89);
+    text-shadow: #a0a2a5;
+    font-size: 20px;
+    text-align: right;
+  }
+  .cart-items-container {
+    margin: 10px;
+    justify-content: flex-end;
+  }
+  .item-option {
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-between;
+
+  }

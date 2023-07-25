@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import NavDash from './NavDash'
 import Modal from 'react-modal';
+import ProductContext from '../Context/Product/ProductContext';
 
 Modal.setAppElement('#root');
 
 function IndexProduct() {
+    const navigate = useNavigate();
     
+    const { editProduct } = useContext(ProductContext);
+
     const [Products, setProducts] = useState([]);
     
     useEffect(() => {
@@ -20,9 +25,6 @@ function IndexProduct() {
         setProducts(response.data);//Metiendo la respuesta(data) al estado 
         console.log(response.data);
     }
-
-
-
 
 
     return (
@@ -68,7 +70,7 @@ function IndexProduct() {
 
 
                                                     <td>
-                                                        <a className=" btn btn-warning mr-auto" href="/EditProduct" > Editar</a>
+                                                        <a className=" btn btn-warning mr-auto" onClick={() => {editProduct(products);  navigate('/EditProduct')}} > Editar</a>
                                                         <a className=" btn btn-danger mr-auto" href='/DeleteProduct' > Eliminar</a>
                                                     </td>
                                                 </tr>

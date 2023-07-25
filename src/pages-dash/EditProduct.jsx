@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import NavDash from './NavDash'
 import Form from 'react-bootstrap/Form';
 import { Formik} from 'formik';
 import { useParams } from 'react-router-dom';
+import ProductContext from '../Context/Product/ProductContext';
 
 function EditProduct() {
+
+  const { selectedProduct } = useContext(ProductContext);
 
   const { id } = useParams();
 
@@ -24,7 +27,7 @@ function EditProduct() {
         }}
         // VER LOS VALORES QUE AGREGA EL USUARIO
         onSubmit={async(values, actions) => { 
-            console.log(values);
+            console.log(selectedProduct);
             
             await axios.put(`http://localhost:3000/products/${id}`, {
               productName:values.productName, 
@@ -50,25 +53,25 @@ function EditProduct() {
                 <Form.Label>Producto</Form.Label>
                 <Form.Control type="text" name="productName"
                 onChange={handleChange}
-                value={values.productName} />
+                value={selectedProduct.productName} />
               </Form.Group>
               <Form.Group className="mb-3" >
                 <Form.Label>Precio</Form.Label>
                 <Form.Control type="text" name="productPrice"
                 onChange={handleChange} 
-                value={values.productPrice}/>
+                value={selectedProduct.productPrice}/>
               </Form.Group>
               <Form.Group className="mb-3" >
                 <Form.Label>Categoria</Form.Label>
                 <Form.Control type="text" name="productCategory"
                 onChange={handleChange} 
-                value={values.productCategory}/>
+                value={selectedProduct.productCategory}/>
               </Form.Group>
               <Form.Group className="mb-3" >
                 <Form.Label>Stock</Form.Label>
                 <Form.Control type="text" name="productStock"
                 onChange={handleChange} 
-                value={values.productStock}/>
+                value={selectedProduct.productStock}/>
               </Form.Group>
               <Form.Group className='mb-3'>
                 <Form.Label>
@@ -83,7 +86,7 @@ function EditProduct() {
                 <Form.Label>Descripción</Form.Label>
                 <Form.Control type="text" name="productDescription"
                 onChange={handleChange} 
-                value={values.productDescription}/>
+                value={selectedProduct.productDescription}/>
               </Form.Group>
               <button type='submit' className='btn btn-success'>Guardar</button>
             </Form>
