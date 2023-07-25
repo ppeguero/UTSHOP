@@ -51,11 +51,29 @@ export default function Carrito() {
                 </div>
             </nav>
 
+            {cartItems.length <= 0 &&
+                        <div className='bg-zinc-200 h-fit flex items-center justify-center p-20'>
+                            <div className='bg-white h-fit p-5 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md'>
+                                <div className='flex flex-col '>
+                                    <div className="mb-8 flex justify-center">
+                                        <FontAwesomeIcon icon={faCartShopping} style={{ color: "#000000", }} className="fa-4x" />
+                                    </div>
+                                    <div>
+                                    <div className='flex row justify-center'> 
+                                 <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
+                                 <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catalogo">COMPRAR AHORA</NavLink></button>    
+                           </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
 
-            <div className='row cart-items-container'>
-                <div className='col-7 relative'>
+
+            <div className='flex xl:flex-row flex-col xl:items-start items-center cart-items-container xl:space-y-0 xl:space-x-10 space-y-6'>
+                <div className='col-7 xl:relative'>
                     <ol className="list-group ">
-                        {cartItems.map(product => (
+                        {cartItems.map(product => ( 
                             <li className="list-group-item d-flex justify-content-between align-items-start" key={product.productName}>
                                 <div className="ms-2 me-auto">
                                     <div className="fw-bold">{product.productName}</div>
@@ -78,26 +96,10 @@ export default function Carrito() {
                             </li>
                         ))}
 
-                        {cartItems.length <= 0 &&
-                        <div className='bg-zinc-200 h-fit flex items-center justify-center p-20'>
-                            <div className='bg-white h-fit p-5 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md'>
-                                <div className='flex flex-col '>
-                                    <div className="mb-8 flex justify-center">
-                                        <FontAwesomeIcon icon={faCartShopping} style={{ color: "#000000", }} className="fa-4x" />
-                                    </div>
-                                    <div>
-                                    <div className='flex row justify-center'> 
-                                 <h1 className="font-bold text-black text-2xl mb-6 text-center">TU CARRITO ESTÁ VACÍO</h1>
-                                 <button className="bg-teal-500 text-white p-2 rounded-md hover:bg-teal-600"><NavLink to="/catalogo">COMPRAR AHORA</NavLink></button>    
-                           </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        }
+                        
                     </ol>
                 </div>
-                <div className="col-4">
+                <div className="col-4 max-md:w-full">
                     {cartItems.length > 0 &&
                         <div className="bg-white h-96 w-full sm:w-4/5 flex items-center justify-center drop-shadow-md cart-paypal" style={{ height: '100%' }}>
                             <div className='cart-total'>
